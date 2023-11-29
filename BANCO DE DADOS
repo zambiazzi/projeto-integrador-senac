@@ -4,7 +4,7 @@ USE db_ProjetoIntegrador;
 CREATE TABLE Usuarios(
 id INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(100),
-email VARCHAR(200)
+senha VARCHAR(100)
 );
 
 CREATE TABLE Categorias(
