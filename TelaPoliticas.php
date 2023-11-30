@@ -19,31 +19,44 @@
     
 </header>
 <body>
+
 <?php
 include 'conexao.php';
 
-$sql = "SELECT * FROM noticias ORDER BY data DESC;";
-$result = $conn->query($sql);
+$categoryName = 'Política';
+$stmt = $conn->prepare("SELECT n.titulo, n.subtitulo, n.corpo, n.data, c.nome AS categoria 
+                       FROM Noticias n 
+                       JOIN Categorias c ON n.categoriasID = c.id 
+                       WHERE c.nome = ? 
+                       ORDER BY n.data DESC;");
+$stmt->bind_param("s", $categoryName);
+
+$result = $stmt->execute();
 
 if (!$result) {
-    die("Erro na consulta SQL: " . $conn->error);
+    echo "Erro na consulta SQL: " . $stmt->error;
 }
+
+$result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<div>
-                <h2>".$row['titulo']."</h2>
-                <h3>".$row['data']."</h3>
-                <p>".$row['subtitulo']."</p>
-                <p>".$row['corpo']."</p>
+                <h2>" . $row['titulo'] . "</h2>
+                <h3>" . $row['data'] . "</h3>
+                <p>" . $row['subtitulo'] . "</p>
+                <p>" . $row['corpo'] . "</p>
               </div>";
     }
 } else {
-    echo "<div>Nenhuma notícia encontrada.</div>";
+    echo "<div>Nenhuma notícia encontrada para a categoria 'Política'.</div>";
 }
 
 $conn->close();
 ?>
+
+
+
 
 </body>
 </html>
