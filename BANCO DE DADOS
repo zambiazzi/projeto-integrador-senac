@@ -21,3 +21,13 @@ data DATE,
 categoriasID INT,
 FOREIGN KEY(categoriasID) REFERENCES Categorias(ID)
 );
+
+CREATE TABLE fotos (
+ id int(10) unsigned NOT NULL AUTO_INCREMENT,
+ conteudo mediumblob NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+INSERT INTO Usuarios(nome, senha) VALUES ("admin","123");
+
+INSERT INTO Categorias(nome) VALUES ("Política"), ("Esportes"), ("Entretenimento"), ("Tempo");
