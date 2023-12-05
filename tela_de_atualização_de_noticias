@@ -94,21 +94,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $categoria = $_POST['categoria'];
     $foto = $_FILES['imagem'];
 
-    $stmt = $conn->prepare("UPDATE Noticias SET titulo=?, subtitulo=?, corpo=?, data=?, categoriasID=?, imagemID=? WHERE id=?");
-    $stmt->bind_param("ssssiii", $titulo, $subtitulo, $corpo, $data, $categoria, $foto, $id);
+    $conn = $conn->prepare("UPDATE Noticias SET titulo=?, subtitulo=?, corpo=?, data=?, categoriasID=?, imagemID=? WHERE id=?");
+    $conn->bind_param("ssssiii", $titulo, $subtitulo, $corpo, $data, $categoria, $foto, $id);
 
-    if ($stmt->execute()) {
+    if ($conn->execute()) {
         echo "Notícia atualizada com sucesso";
     } else {
-        echo "Erro ao atualizar notícia: " . $stmt->error;
+        echo "Erro ao atualizar notícia: " . $conn->error;
     }
 
-    $stmt->close();
+    $conn->close();
 } else {
     echo "ID da notícia não especificado.";
 }
 
-$sql = "SELECT id, titulo, subtitulo,corpo,data,categoriaId,imagem FROM Noticias";
+$sql = "SELECT id, titulo, subtitulo,corpo,data,categoriasID,imagemID from noticias;";
 $result = $conn->query($sql);
 
 echo "<table>
@@ -123,7 +123,11 @@ echo "<table>
         <th>Ações</th>
       </tr>";
 
-if ($stmt !== false && $searchResult->num_rows > 0) {
+if ($result === false) {
+  die("Erro na consulta: " . $conn->error);
+    }
+
+if ($conn->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
               <td>" . $row['id'] . "</td>
@@ -131,7 +135,7 @@ if ($stmt !== false && $searchResult->num_rows > 0) {
               <td>" . $row['subtitulo'] . "</td>
               <td>" . $row['corpo'] . "</td>
               <td>" . $row['data'] . "</td>
-              <td>" . $row['categoriaID'] . "</td>
+              <td>" . $row['categoriasID'] . "</td>
               <td>" . $row['imagemID'] . "</td>
 
               
