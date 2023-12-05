@@ -41,7 +41,7 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<div>
+        heco "<div>
                 <h2>" . $row['titulo'] . "</h2>
                 <h3>" . $row['data'] . "</h3>
                 <p>" . $row['subtitulo'] . "</p>
