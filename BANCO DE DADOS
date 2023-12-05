@@ -30,3 +30,7 @@ CREATE TABLE fotos (
  tamanho int(10) unsigned NOT NULL,
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
+
+INSERT INTO Usuarios(nome, senha) VALUES ("admin","123");
+
+INSERT INTO Categorias(nome) VALUES ("Política"), ("Esportes"), ("Entretenimento"), ("Tempo");
