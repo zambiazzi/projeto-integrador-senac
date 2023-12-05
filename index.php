@@ -1,61 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style_tela_inicial.css">
-    <title>Notícias</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style_login.css" media="screen"/>
+  <title>Página de Login</title>
 </head>
-
 <body>
-    <header>
-        <a href="tela_inicial.php">Home</a>
-        <nav class="filtros">
-            <a href="TelaPoliticas.php">Política</a>
-            <a href="TelaEsportes.php">Esportes</a>
-            <a href="TelaEntretenimento.php">Entretenimento</a>
-            <a href="TelaTempo.php">Tempo</a>
-        </nav>
-        <div class="login">
-            <a href="login.php">Login</a>
+<div class="login-card">
+  <div class="card-header">
+    <h1>Login</h1>
+  </div>
+  <div class="card-body">
+      <form action="login.php" method="POST">
+        <div class="form-group">
+          <label for="username">Usuário</label>
+          <input type="text" id="username" name="nome">
         </div>
-    </header>
-    <?php
-    include 'conexao.php';
-
-    $sql = "SELECT noticias.*, fotos.conteudo AS imagem FROM noticias LEFT JOIN fotos ON noticias.id = fotos.id ORDER BY data DESC;";
-    $result = $conn->query($sql);
-
-    if(!$result) {
-        die("Erro na consulta SQL: ".$conn->error);
-    }
-
-    if($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            echo "<div>
-                <h2>".$row['titulo']."</h2>
-                <h3>".$row['data']."</h3>
-                <p>".$row['subtitulo']."</p>
-                <p>".$row['corpo']."</p>";
-
-            if(!empty($row['imagem'])) {
-                $imagemBase64 = base64_encode($row['imagem']);
-
-                echo '<img src="data:image/jpeg;base64,'.$imagemBase64.'>';
-            } else {
-                echo '<div>Nenhuma imagem disponível</div>';
-            }
-
-            echo "</div>";
-        }
-    } else {
-        echo "<div>Nenhuma notícia encontrada.</div>";
-    }
-
-    $conn->close();
-    ?>
-
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="senha">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="login-button">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
-
 </html>
