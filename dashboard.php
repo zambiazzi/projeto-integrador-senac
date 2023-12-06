@@ -1,71 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <title>Administrador</title>
+    <title>Dashboard</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style_dashboard.css">
+    <link rel="stylesheet" href="css/style_cadastrar.css">
+    <link rel="stylesheet" href="css/style_index.css">
+    <link rel="icon" href="imgs/coroa.png">
     <style>
-        .action-buttons {
-            display: flex;
-            gap: 10px; 
+        .tabela {
+            font-family: 'Noto Sans', sans-serif;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
 
-        .action-buttons button {
-            background-color: #5cb85c;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        th,
+        td {
+            color: black;
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
         }
 
-        .action-buttons button:hover {
-            background-color: #4cae4c;
+        th {
+            background-color: #f2f2f2;
         }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        button {
+        padding: 10px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
     </style>
 </head>
+
 <body>
-    <div class="action-buttons">
-        <button style="background-color: black" onclick="window.location.href='logoff.php'">Sair</button>
+
+    <div class="data">
+        <?php
+        date_default_timezone_set('America/Sao_Paulo');
+
+        $dia_semana = date('D');
+        $dia = date('j');
+        $mes = date('F');
+        $ano = date('Y');
+
+        $traducao_dias = array(
+            'Mon' => 'Seg',
+            'Tue' => 'Ter',
+            'Wed' => 'Qua',
+            'Thu' => 'Qui',
+            'Fri' => 'Sex',
+            'Sat' => 'Sab',
+            'Sun' => 'Dom'
+        );
+
+        $dia_semana_traduzido = $traducao_dias[$dia_semana];
+
+        $traducao_meses = array(
+            'January' => 'Janeiro',
+            'February' => 'Fevereiro',
+            'March' => 'Março',
+            'April' => 'Abril',
+            'May' => 'Maio',
+            'June' => 'Junho',
+            'July' => 'Julho',
+            'August' => 'Agosto',
+            'September' => 'Setembro',
+            'October' => 'Outubro',
+            'November' => 'Novembro',
+            'December' => 'Dezembro'
+        );
+
+        $mes_traduzido = $traducao_meses[$mes];
+
+        echo $dia_semana_traduzido.'. '.$dia.' de '.$mes_traduzido.', '.$ano;
+        ?>
+
+        <a class="botao-login" href="tela_login.php">Logoff</a>
     </div>
-    <div id="container">
-        <h1>Gerenciar Contas</h1>
-        <div id="relatorio-usuarios">
+    </header>
+
+    <br>
+    <a href="index.php"><img src="imgs/logo.png" class="logoTelaInicial"></a>
+    <br>
+
+    <div class="linha-horizontal1"></div>
+
+    <div class="nav-bar">
+        <a href="dashboard.php" class="nav-link active">Dashboard</a>
+        <a href="cadastrar.php" class="nav-link">Cadastrar usuários</a>
+        <div class="line"></div>
+        <a href="atualizar.php" class="nav-link">Atualizar usuários</a>
+        <div class="line"></div>
+        <a href="deletar.php" class="nav-link">Deletar usuários</a>
+        <div class="line"></div>
+        <a href="cadastrar_noticias.php" class="nav-link">Cadastrar notícias</a>
+        <div class="line"></div>
+        <a href="atualizar_noticias.php" class="nav-link">Atualizar notícias</a>
+    </div>
+
+    <div class="linha-horizontal2"></div>
+
+        <h1 style="font-family: 'Noto Sans', sans-serif;">Gerenciar Contas</h1>
+        
             <?php
-                include 'conexao.php';
+            include 'conexao.php';
 
-                $sql = "SELECT id, nome FROM usuarios";
-                $result = $conn->query($sql);
+            $sql = "SELECT id, nome FROM usuarios";
+            $result = $conn->query($sql);
 
-                echo "<table class='center-table'>
+            echo "<table border='1' class='tabela'>
                         <tr>
                             <th>ID</th>
                             <th>Usuário</th>
                         </tr>";
-                
-                if($result->num_rows > 0){
-                    while($row = $result->fetch_assoc()){
-                        echo "<tr>
+
+            if($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>
                                 <td>".$row['id']."</td>
                                 <td>".$row['nome']."</td>
                               </tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='3'>Nenhum Usuário Cadastrado</td></tr>";
                 }
+            } else {
+                echo "<tr><td colspan='3'>Nenhum Usuário Cadastrado</td></tr>";
+            }
 
-                echo "</table>";
+            echo "</table>";
 
-                $conn->close();
+            $conn->close();
             ?>
-        </div> 
-            <div class="action-buttons" style="margin-left: 165px; margin-top: 10px;">
-                <button style="background-color: black" onclick="window.location.href='cadastrar.php'">Cadastrar</button>
-                <button style="background-color: black" onclick="window.location.href='atualizar.php'">Atualizar</button>
-                <button style="background-color: black" onclick="window.location.href='deletar.php'">Deletar</button>
-                <button style="background-color: black" onclick="window.location.href='gerar_pdf.php'">Gerar PDF</button>
-            </div>
-        </div>
-    </div>
+        <br>
+    <form class="#" action="gerar_pdf.php" method="post" target="_blank">
+        <button type="submit">Gerar PDF</button>
+    </form>
 </body>
+
 </html>

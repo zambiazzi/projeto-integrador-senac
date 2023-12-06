@@ -1,9 +1,9 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     background-color: #f4f4f4;
     padding: 20px;
 }
-
+ 
 h1 {
     color: #333;
 }
@@ -27,8 +27,8 @@ form {
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
-    transition: border-color 0.3s; /* Faz com que o input ocupe 100% da largura disponível */
-    margin-bottom: 10px; /* Adiciona um espaçamento inferior */
+    transition: border-color 0.3s; 
+    margin-bottom: 10px; 
 }
 
 .input-group input:focus {
@@ -47,3 +47,4 @@ form {
 .input-group .submit-btn:hover {
     background-color: #4cae4c;
 }
+

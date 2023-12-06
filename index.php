@@ -63,15 +63,15 @@
     <div class="linha-horizontal1"></div>
 
     <div class="nav-bar">
-        <a href="#" class="nav-link active">Todas</a>
+        <a href="index.php" class="nav-link active">Todas</a>
         <div class="line"></div>
-        <a href="#" class="nav-link">Política</a>
+        <a href="TelaPolitica.php" class="nav-link">Política</a>
         <div class="line"></div>
-        <a href="#" class="nav-link">Esportes</a>
+        <a href="TelaEsportes.php" class="nav-link">Esportes</a>
         <div class="line"></div>
-        <a href="#" class="nav-link">Entretenimento</a>
+        <a href="TelaEntretenimento.php" class="nav-link">Entretenimento</a>
         <div class="line"></div>
-        <a href="#" class="nav-link">Tempo</a>
+        <a href="TelaTempo.php" class="nav-link">Tempo</a>
         <div class="line"></div>
     </div>
 
@@ -83,7 +83,7 @@
     <div class="linha-rodape"></div>
 
     <br>
-    <a href="index.php"><img src="imgs/logo.png" class="logoTelaInicial"></a>
+    <a href="index.php"><img src="imgs/logo2.png" class="logoTelaInicial"></a>
     <span id="frase-rodape">© 2023 Kingnews, Inc. Todos os direitos reservados.</span>       
 
 
