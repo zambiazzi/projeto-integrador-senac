@@ -17,16 +17,16 @@
     <h1>Atualizar Usuário</h1>
     <div id="lista-usuarios"></div>
 
-    <form action="#" method="post">
-        <input type="hidden" id="id_usuarios" name="id_usuarios">
+    <form action="#" method="post" class="input-group">
+        <input class="input" type="hidden" id="id_usuarios" name="id_usuarios">
 
         <label for="nome">Usuário:</label><br>
-        <input type="text" id="nome" name="nome" required><br> 
+        <input class="input" type="text" id="nome" name="nome" required><br> 
 
         <label for="senha">Senha:</label><br>
-        <input type="text" id="senha" name="senha" required><br> 
+        <input class="input" type="text" id="senha" name="senha" required><br> 
 
-        <input type="submit" value="Atualizar">
+        <input  class="submit-btn" type="submit" value="Atualizar">
     </form>
 </body>
 </html>

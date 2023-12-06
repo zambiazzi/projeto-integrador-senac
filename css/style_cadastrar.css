@@ -4,6 +4,10 @@ body {
     padding: 20px;
 }
 
+h1 {
+    color: #333;
+}
+
 form {
     background: white;
     padding: 20px;
@@ -20,7 +24,7 @@ form {
 }
 
 .input-group input {
-    width: 100%;
+    width: 99%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
