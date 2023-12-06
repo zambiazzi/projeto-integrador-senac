@@ -80,13 +80,6 @@
     <div class="ultimas-noticias">Últimas notícias</div>
     <div class="linha-titulo"></div>
 
-    <div class="linha-rodape"></div>
-
-    <br>
-    <a href="index.php"><img src="imgs/logo2.png" class="logoTelaInicial"></a>
-    <span id="frase-rodape">© 2023 Kingnews, Inc. Todos os direitos reservados.</span>
-
-
     <?php
     include 'conexao.php';
 
@@ -120,6 +113,11 @@
     $conn->close();
     ?>
 
+    <div class="linha-rodape"></div>
+
+    <br>
+    <a href="index.php"><img src="imgs/logo2.png" class="logoTelaInicial"></a>
+    <span id="frase-rodape">© 2023 Kingnews, Inc. Todos os direitos reservados.</span>
 </body>
 
 </html>
