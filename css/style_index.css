@@ -1,0 +1,117 @@
+body {
+    margin-left: 2.5cm;
+    margin-right: 2.5cm;
+    margin-top: 1cm;
+}
+
+.data {
+    margin-top: 20px;
+    border-bottom: 1px solid #D2D1D1;
+    padding-bottom: 10px;
+    font-size: 17px;
+    font-style: italic;
+    font-family: 'Noto Serif', serif;
+}
+
+.botao-login {
+    float: right;
+    text-decoration: none;
+    color: #02AFFF;
+}
+
+.logoTelaInicial {
+    height: auto;
+}
+
+.linha-horizontal1 {
+    width: 100%;
+    border-top: 1px solid #EFEFEF;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.linha-horizontal2 {
+    width: 100%;
+    border-top: 3px solid #000;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-right: 30px;
+    position: relative;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+}
+
+.nav-link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #000;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    background-color: #02AFFF;
+}
+
+.nav-link.active {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.nav-link.active::after {
+    width: 100%;
+    background-color: #02AFFF;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: #02AFFF;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    transition: transform 0.3s;
+}
+
+.nav-link.active + .line {
+    transform: scaleX(1);
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-link {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+

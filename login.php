@@ -20,7 +20,7 @@ if($qtd > 0){
     print "<script>location.href='dashboard.php';</script>";
 }else{
     print "<script>alert('Usuário e/ou senha incorreto(s)');</script>";
-    print "<script>location.href='index.php';</script>";
+    print "<script>location.href='tela_login.php';</script>";
 }
 
 ?>

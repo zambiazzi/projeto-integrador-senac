@@ -10,7 +10,7 @@ body {
   position: fixed;
   bottom: 10px; 
   left: 10px; 
-  max-width: 100%;
+  max-width: 100vh;
   height: 85vh;
   opacity: 0.2;
   pointer-events: none;
@@ -48,13 +48,16 @@ body {
 }
 
 .card-header h1 {
-  font-size: 2em;
-  color: #333;
-  text-shadow: 1px 1px #ddd;
+  position: relative;
+  display: block;
+  font-family: 'Noto Sans', sans-serif;
+  color: #000;
+  font-weight: 700;
 }
 
 .form-group {
   margin-bottom: 10px;
+  font-family: 'Noto sans', serif;
 }
 
 .form-group label {
@@ -111,6 +114,7 @@ input[type="submit"]:hover {
   width: 100%;
   transition: background-color 0.3s ease;
   transition: 0.25s;
+  font-family: 'Noto sans', sans-serif;
 }
 
 .login-button:hover {
@@ -121,6 +125,3 @@ input[type="submit"]:hover {
 
 }
 
-h1 {
-  font-family: sans-serif;
-}

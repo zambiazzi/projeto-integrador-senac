@@ -12,7 +12,7 @@
   <img src="imgs/coroa.png" class="coroa-image">
   <div class="login-card">
     <div class="card-header">
-      <h1>Login</h1>
+      <h1>Bem-vindo</h1>
     </div>
     <div class="card-body">
       <form action="login.php" method="POST">
@@ -33,4 +33,4 @@
   </div>
 </body>
 
-</html>
+</html> 
