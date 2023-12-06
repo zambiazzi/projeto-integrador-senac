@@ -88,7 +88,7 @@
         <a class="botao-login" href="tela_login.php">Logoff</a>
     </div>
     </header>
-        
+
     <br>
     <a href="index.php"><img src="imgs/logo.png" class="logoTelaInicial"></a>
     <br>

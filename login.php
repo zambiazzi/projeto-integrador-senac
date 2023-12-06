@@ -14,11 +14,11 @@ $row = $res->fetch_object();
 
 $qtd = $res->num_rows;
 
-if($qtd > 0){
+if($qtd > 0) {
     $_SESSION["nome"] = $row->nome;
     $_SESSION["tipo"] = $row->tipo;
     print "<script>location.href='dashboard.php';</script>";
-}else{
+} else {
     print "<script>alert('Usuário e/ou senha incorreto(s)');</script>";
     print "<script>location.href='tela_login.php';</script>";
 }

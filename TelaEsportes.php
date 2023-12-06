@@ -76,13 +76,13 @@
     </div>
 
     <div class="linha-horizontal2"></div>
-    
+
 
     <div class="linha-rodape"></div>
 
     <br>
     <a href="index.php"><img src="imgs/logo2.png" class="logoTelaInicial"></a>
-    <span id="frase-rodape">© 2023 Kingnews, Inc. Todos os direitos reservados.</span>       
+    <span id="frase-rodape">© 2023 Kingnews, Inc. Todos os direitos reservados.</span>
 
 
     <?php

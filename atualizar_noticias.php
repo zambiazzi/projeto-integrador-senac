@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="css/style_index.css">
   <link rel="icon" href="imgs/coroa.png">
   <meta charset="utf-8">
+
   <style>
     .update-form {
       background-color: #fff;
@@ -49,6 +50,7 @@
       background-color: #0056b3;
     }
   </style>
+
   <script>
     function preencherFormulario(id, titulo, subtitulo, corpo, data, categoria, imagem) {
       document.getElementById('id').value = id;
@@ -166,14 +168,13 @@
     <div class="input-group">
       <label for="imagem">Imagem:</label>
       <input type="file" id="imagem" name="imagem" accept="image/*" required>
-
       <input type="hidden" id="hiddenId" name="hiddenId">
     </div>
     <button type="submit" name="submit" class="submit-btn">Atualizar</button>
   </form>
-  </form>
 
   <div id="atualizacao">
+    
     <?php
     include 'conexao.php';
 

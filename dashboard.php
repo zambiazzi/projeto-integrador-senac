@@ -36,14 +36,14 @@
         }
 
         button {
-        padding: 10px;
-        background-color: #000;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
     </style>
 </head>
 
@@ -115,36 +115,36 @@
 
     <div class="linha-horizontal2"></div>
 
-        <h1 style="font-family: 'Noto Sans', sans-serif;">Gerenciar Contas</h1>
-        
-            <?php
-            include 'conexao.php';
+    <h1 style="font-family: 'Noto Sans', sans-serif;">Gerenciar Contas</h1>
 
-            $sql = "SELECT id, nome FROM usuarios";
-            $result = $conn->query($sql);
+    <?php
+    include 'conexao.php';
 
-            echo "<table border='1' class='tabela'>
+    $sql = "SELECT id, nome FROM usuarios";
+    $result = $conn->query($sql);
+
+    echo "<table border='1' class='tabela'>
                         <tr>
                             <th>ID</th>
                             <th>Usuário</th>
                         </tr>";
 
-            if($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo "<tr>
+    if($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "<tr>
                                 <td>".$row['id']."</td>
                                 <td>".$row['nome']."</td>
                               </tr>";
-                }
-            } else {
-                echo "<tr><td colspan='3'>Nenhum Usuário Cadastrado</td></tr>";
-            }
+        }
+    } else {
+        echo "<tr><td colspan='3'>Nenhum Usuário Cadastrado</td></tr>";
+    }
 
-            echo "</table>";
+    echo "</table>";
 
-            $conn->close();
-            ?>
-        <br>
+    $conn->close();
+    ?>
+    <br>
     <form class="#" action="gerar_pdf.php" method="post" target="_blank">
         <button type="submit">Gerar PDF</button>
     </form>

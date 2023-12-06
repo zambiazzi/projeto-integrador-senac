@@ -9,6 +9,7 @@
     <link rel="icon" href="imgs/coroa.png">
     <title>Cadastrar Notícia</title>
 </head>
+
 <style>
     .admin-container {
         background-color: #fff;
@@ -46,12 +47,12 @@
     }
 
     textarea {
-    padding: 8px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: none; 
-}
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: none;
+    }
 </style>
 
 <body>
@@ -149,7 +150,6 @@
             <br><br>
             <button type="submit">Cadastrar Notícia</button>
         </form>
-    </div>
 
     <?php
     include 'conexao.php';
@@ -215,8 +215,6 @@
         $conn->close();
     }
     ?>
-    </form>
-    </div>
 </body>
 
 </html>
