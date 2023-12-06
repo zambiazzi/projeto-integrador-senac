@@ -101,24 +101,6 @@
 
     <div class="linha-horizontal2"></div>
 
-    <div class="weather-card">
-        <div class="weather-info">
-            <h2>Joaçaba, SC</h2>
-            <p>Chuvas fortes com trovoadas</p>
-            <p>Temperatura: 24°C</p>
-        </div>
-        <div class="img-tempo">
-            <img src="imgs/thunderstorms.png" alt="">
-        </div>
-    </div>
-
-    <div class="linha-rodape"></div>
-
-    <br>
-    <a href="index.php"><img src="imgs/logo2.png" class="logoTelaInicial"></a>
-    <span id="frase-rodape">© 2023 Kingnews, Inc. Todos os direitos reservados.</span>
-
-
     <?php
     include 'conexao.php';
 
@@ -152,6 +134,25 @@
     $conn->close();
     ?>
 
+    <br><br>
+
+    <div class="weather-card">
+        <div class="weather-info">
+            <h2>Joaçaba, SC</h2>
+            <p>Chuvas fortes com trovoadas</p>
+            <p>Temperatura: 24°C</p>
+        </div>
+        <div class="img-tempo">
+            <img src="imgs/thunderstorms.png" alt="">
+        </div>
+    </div>
+
+    <div class="linha-rodape"></div>
+
+    <br>
+    <a href="index.php"><img src="imgs/logo2.png" class="logoTelaInicial"></a>
+    <span id="frase-rodape">© 2023 Kingnews, Inc. Todos os direitos reservados.</span>
+    
 </body>
 
 </html>
