@@ -26,7 +26,7 @@
 </head>
 <body>
     <div class="action-buttons">
-    <button style="background-color: black" onclick="window.location.href='logoff.php'">Sair</button>
+        <button style="background-color: black" onclick="window.location.href='logoff.php'">Sair</button>
     </div>
     <div id="container">
         <h1>Gerenciar Contas</h1>
@@ -59,10 +59,13 @@
                 $conn->close();
             ?>
         </div> 
-        <div class="action-buttons" style="margin-left: 165px; margin-top: 10px;">
-            <button style="background-color: black" onclick="window.location.href='cadastrar.php'">Cadastrar</button>
-            <button style="background-color: black" onclick="window.location.href='atualizar.php'">Atualizar</button>
-            <button style="background-color: black" onclick="window.location.href='deletar.php'">Deletar</button>
+            <div class="action-buttons" style="margin-left: 165px; margin-top: 10px;">
+                <button style="background-color: black" onclick="window.location.href='cadastrar.php'">Cadastrar</button>
+                <button style="background-color: black" onclick="window.location.href='atualizar.php'">Atualizar</button>
+                <button style="background-color: black" onclick="window.location.href='deletar.php'">Deletar</button>
+                <button style="background-color: black" onclick="window.location.href='gerar_pdf.php'">Gerar PDF</button>
+            </div>
         </div>
+    </div>
 </body>
 </html>
