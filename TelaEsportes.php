@@ -80,9 +80,20 @@
     <?php
     include 'conexao.php';
 
-    $sql = "SELECT noticias.*, fotos.conteudo AS imagem FROM noticias LEFT JOIN fotos ON noticias.id = fotos.id ORDER BY data DESC;";
+    $categoria = "Esportes";
+    $sql = "SELECT 
+    Noticias.titulo,
+    Noticias.subtitulo,
+    Noticias.corpo,
+    Noticias.data,
+    Noticias.categoriasID
+        FROM 
+            Categorias
+        INNER JOIN Noticias ON Noticias.categoriasID = Categorias.id
+        WHERE Categorias.nome = '$categoria'
+        ORDER BY Noticias.data DESC;";
+        
     $result = $conn->query($sql);
-
     if(!$result) {
         die("Erro na consulta SQL: ".$conn->error);
     }
@@ -94,19 +105,8 @@
                 <h3>".$row['data']."</h3>
                 <p>".$row['subtitulo']."</p>
                 <p>".$row['corpo']."</p>";
-
-            if(!empty($row['imagem'])) {
-                $imagemBase64 = base64_encode($row['imagem']);
-
-                echo '<img src="data:image/jpeg;base64,'.$imagemBase64.'>';
-            } else {
-                echo '<div>Nenhuma imagem disponível</div>';
-            }
-
-            echo "</div>";
-        }
     }
-
+}
     $conn->close();
     ?>
 
