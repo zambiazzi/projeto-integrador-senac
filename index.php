@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <a href="tela_inicial.php">Home</a>
+        <a href=""><img src="imgs/logo.png" class="logoTelaInicial"></a>
         <nav class="filtros">
             <a href="TelaPoliticas.php">Política</a>
             <a href="TelaEsportes.php">Esportes</a>
@@ -18,7 +18,7 @@
             <a href="TelaTempo.php">Tempo</a>
         </nav>
         <div class="login">
-            <a href="login.php">Login</a>
+            <a href="tela_login.php">Login</a>
         </div>
     </header>
     <?php
