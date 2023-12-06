@@ -57,7 +57,7 @@
     </header>
 
     <br>
-    <a href=""><img src="imgs/logo.png" class="logoTelaInicial"></a>
+    <a href="index.php"><img src="imgs/logo.png" class="logoTelaInicial"></a>
     <br>
 
     <div class="linha-horizontal1"></div>
@@ -74,15 +74,17 @@
         <a href="#" class="nav-link">Tempo</a>
         <div class="line"></div>
     </div>
-    
+
     <div class="linha-horizontal2"></div>
-    
 
+    <div class="ultimas-noticias">Últimas notícias</div>
+    <div class="linha-titulo"></div>
 
+    <div class="linha-rodape"></div>
 
-
-    <div id="titulo-noticias">Últimas Notícias</div>
-    <div id="linha-titulo"></div>
+    <br>
+    <a href="index.php"><img src="imgs/logo.png" class="logoTelaInicial"></a>
+    <span id="frase-rodape">© 2023 Kingnews, Inc. Todos os direitos reservados.</span>       
 
 
     <?php
@@ -113,7 +115,7 @@
 
             echo "</div>";
         }
-    } 
+    }
 
     $conn->close();
     ?>

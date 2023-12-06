@@ -99,8 +99,31 @@ body {
     transform: scaleX(1);
 }
 
+.ultimas-noticias {
+    font-family: 'Noto Serif', serif;
+    font-size: 40px;
+    font-style: italic;
+    color: black;
+    text-align: left;
+    margin-top: 50px; 
+    margin-bottom: -4px;
+}
 
+.linha-titulo {
+    width: 45%;
+    border-bottom: 1px solid black;
+    margin-left: 16%;
+    margin-right: auto;
+    margin-top: -6px;
+    margin-bottom: 30px;
+}
 
+.linha-rodape {
+    width: 100%;
+    border-top: 1px solid #000;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 
 @media (max-width: 768px) {
@@ -112,6 +135,10 @@ body {
     .nav-link {
         margin-right: 0;
         margin-bottom: 10px;
+    }
+
+    .linha-titulo {
+        width: 80%; 
     }
 }
 
